@@ -1,9 +1,11 @@
 import express from "express";
-import {getAllBarbies } from "../controllers/barbieControllers.js";
+import { createBarbie, deleteBarbie, getAllBarbies, getBarbiesById } from "../controllers/barbieControllers.js";
 
 const router = express.Router();
 
 router.get("/", getAllBarbies);
-// router.get("/:id", getBarbieById);
+router.get("/:id", getBarbiesById);
+router.post("/", createBarbie);
+router.delete("/:id", deleteBarbie);
 
 export default router;
